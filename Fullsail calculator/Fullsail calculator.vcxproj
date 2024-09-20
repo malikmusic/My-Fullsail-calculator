@@ -133,11 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CalculatorLogic.cpp" />
     <ClCompile Include="CalculatorMain.cpp" />
     <ClCompile Include="CalculatorUI.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalculatorLogic.h" />
     <ClInclude Include="CalculatorMain.h" />
     <ClInclude Include="CalculatorUI.h" />
   </ItemGroup>
