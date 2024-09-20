@@ -2,7 +2,9 @@
 #include "wx/wx.h"
 class CalculatorUI :
     public wxFrame
-{ //Constructor
+{
+public:
+//Constructor
     CalculatorUI();
 
 private:
