@@ -23,7 +23,6 @@ EVT_BUTTON(13001, CalculatorUI::onButtonPress)//clear
 EVT_BUTTON(13002, CalculatorUI::onButtonPress)//back
 EVT_BUTTON(13003, CalculatorUI::onButtonPress)//decimal
 EVT_BUTTON(13004, CalculatorUI::onButtonPress)//positive/negitive
-
 wxEND_EVENT_TABLE()
 CalculatorUI::CalculatorUI() : wxFrame(nullptr, wxID_ANY, "Calculato", wxDefaultPosition, wxSize(300, 400))
 {
@@ -70,5 +69,47 @@ CalculatorUI::CalculatorUI() : wxFrame(nullptr, wxID_ANY, "Calculato", wxDefault
 
 	mainSizer->Add(grid, 1, wxEXPAND | wxALL, 10);
 	SetSizer(mainSizer);
+
+}
+
+void CalculatorUI::onButtonPress(wxCommandEvent& event)
+{
+	int id = event.GetId();
+	if (id == 10009) {
+		m_screen->AppendText("0");
+	}
+	else if (id > 10001 && id < 10009) {
+		m_screen->AppendText(std::to_string(id - 9999));
+	}
+	else if (id == 11000) {
+		m_screen->AppendText("+");
+	}
+	else if (id == 11001) {
+		m_screen->AppendText("-");
+	}
+	else if (id == 11002) {
+		m_screen->AppendText("*");
+	}
+	else if (id == 11003) {
+		m_screen->AppendText("/");
+	}
+	else if (id == 11004) {
+		m_screen->AppendText("%");
+	}
+	else if (id == 12000) {
+		m_screen->AppendText("sin");
+	}
+	else if (id == 12001) {
+		m_screen->AppendText("cos");
+	}
+	else if (id == 12002) {
+		m_screen->AppendText("tan");
+	}
+	else if (id == 13002) {
+		m_screen->AppendText(".");
+	}
+	else {
+		return;
+	}
 
 }
